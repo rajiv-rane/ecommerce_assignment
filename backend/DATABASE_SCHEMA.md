@@ -64,10 +64,10 @@ MongoDB will automatically create an index on `_id`. For better performance, you
 
 ```javascript
 // In MongoDB Atlas or using Mongoose:
-db.products.createIndex({ category: 1 })
-db.products.createIndex({ price: 1 })
-db.products.createIndex({ rating: -1 })
-db.products.createIndex({ name: "text", description: "text", brand: "text" }) // Text search
+db.products.createIndex({ category: 1 });
+db.products.createIndex({ price: 1 });
+db.products.createIndex({ rating: -1 });
+db.products.createIndex({ name: 'text', description: 'text', brand: 'text' }); // Text search
 ```
 
 ---
@@ -145,9 +145,9 @@ db.products.createIndex({ name: "text", description: "text", brand: "text" }) //
 ### Indexes (Recommended)
 
 ```javascript
-db.orders.createIndex({ createdAt: -1 })
-db.orders.createIndex({ "shippingAddress.fullName": 1 })
-db.orders.createIndex({ isPaid: 1, isDelivered: 1 })
+db.orders.createIndex({ createdAt: -1 });
+db.orders.createIndex({ 'shippingAddress.fullName': 1 });
+db.orders.createIndex({ isPaid: 1, isDelivered: 1 });
 ```
 
 ---
@@ -164,6 +164,7 @@ db.orders.createIndex({ isPaid: 1, isDelivered: 1 })
 ### Step 2: Collections Creation
 
 Collections are created automatically when:
+
 - You run the seed script (`npm run seed`) → creates `products` collection
 - A user places an order → creates `orders` collection
 
@@ -214,15 +215,15 @@ MongoDB Atlas allows you to add schema validation rules. However, since we're us
 
 ## Data Types Reference
 
-| Field Type | MongoDB Type | Description |
-|------------|-------------|-------------|
-| String | string | Text data |
-| Number | double/int32 | Numeric data |
-| Boolean | bool | true/false |
-| Date | date | Timestamp |
-| ObjectId | objectId | Reference to another document |
-| Array | array | List of items |
-| Object | object | Embedded document |
+| Field Type | MongoDB Type | Description                   |
+| ---------- | ------------ | ----------------------------- |
+| String     | string       | Text data                     |
+| Number     | double/int32 | Numeric data                  |
+| Boolean    | bool         | true/false                    |
+| Date       | date         | Timestamp                     |
+| ObjectId   | objectId     | Reference to another document |
+| Array      | array        | List of items                 |
+| Object     | object       | Embedded document             |
 
 ---
 
@@ -237,6 +238,7 @@ MongoDB Atlas allows you to add schema validation rules. However, since we're us
 ## Sample Data
 
 After running `npm run seed`, you'll have:
+
 - **30 products** across 6 categories
 - Products generated using Faker.js with realistic data
 - All products will have images, prices, ratings, etc.
@@ -246,23 +248,27 @@ After running `npm run seed`, you'll have:
 ## Query Examples
 
 ### Find all Electronics products
+
 ```javascript
-db.products.find({ category: "Electronics" })
+db.products.find({ category: 'Electronics' });
 ```
 
 ### Find products in price range
+
 ```javascript
-db.products.find({ price: { $gte: 100, $lte: 500 } })
+db.products.find({ price: { $gte: 100, $lte: 500 } });
 ```
 
 ### Find orders by customer name
+
 ```javascript
-db.orders.find({ "shippingAddress.fullName": "John Doe" })
+db.orders.find({ 'shippingAddress.fullName': 'John Doe' });
 ```
 
 ### Find unpaid orders
+
 ```javascript
-db.orders.find({ isPaid: false })
+db.orders.find({ isPaid: false });
 ```
 
 ---
@@ -277,4 +283,3 @@ db.orders.find({ isPaid: false })
 - **Relationships**: Orders reference Products via ObjectId
 
 No manual schema creation needed - everything is handled automatically by Mongoose!
-
