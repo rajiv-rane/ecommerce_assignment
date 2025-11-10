@@ -1,0 +1,166 @@
+================================================================================
+E-COMMERCE APPLICATION DEVELOPMENT PROMPTS
+================================================================================
+
+This file contains all the professional prompts used during the development
+of this full-stack e-commerce application.
+
+================================================================================
+PROMPT 1: Initial Project Setup
+================================================================================
+
+You are a senior full-stack engineer. Build a clean, responsive e-commerce site with:
+
+Frontend: React (Vite) + React Router + Tailwind + Context API (cart state)
+
+Backend: Node.js + Express + MongoDB Atlas (Mongoose)
+
+Features: Browse products, product details, shopping cart, checkout (mock order)
+
+Extras: LocalStorage cart persistence, search/filter/sort, seed data
+
+Quality: Proper folder structure, lint, tests, .env, and simple CI/CD
+
+================================================================================
+PROMPT 2: TypeScript Migration & Complete Implementation
+================================================================================
+
+Generate a technical architecture document in Markdown (ARCHITECTURE.md) with:
+
+* Overview & requirements
+* System diagram (text or PlantUML)
+* API routes + sample requests
+* Data models (Product, Order)
+* State management for cart
+* Error handling, deployment, and testing strategy
+
+Create /backend using Express + Mongoose + TypeScript with:
+* Routes:
+    * GET /api/products (filter/sort/paginate)
+    * GET /api/products/:id
+    * POST /api/orders
+* Models: Product, Order
+* .env config, error handling middleware
+* Seed script to insert sample products
+* Jest + Supertest tests
+* Scripts: dev, build, seed, test
+
+Create /frontend using React (Vite + TS + Tailwind) with:
+* Routes: /, /products/:id, /cart, /checkout/success
+* Components: ProductCard, ProductList, ProductDetail, CartPage
+* Context + Reducer for cart (localStorage persistence)
+* Axios for backend API calls
+* Toasts for cart updates
+* Vitest tests for cart reducer
+
+Generate an OpenAPI YAML for the backend routes:
+/api/products, /api/products/{id}, /api/orders, /api/health.
+Include Product, Order, and Error schemas.
+
+Create scripts/seed.ts using Faker to add ~30 sample products (title, price, category, images).
+Command: npm run seed.
+
+Implement CartContext and reducer:
+* Actions: add, update, remove, clear
+* Persist to localStorage
+* Expose useCart() hook and show item count in header
+
+Build a mock checkout:
+* On CartPage, "Place Order" → POST /api/orders
+* Show order success page with order ID
+* Clear cart on success
+
+Generate a professional README.md with:
+* Overview, Tech Stack, Features
+* Setup instructions (npm install, npm run dev)
+* Environment variables
+* Deployment (Vercel + Render)
+* API endpoints summary
+
+Create docs/PROMPTS_USED.md — list every prompt used with short notes.
+
+Verify acceptance criteria:
+* Products list works (search/filter/sort)
+* Product details
+* Cart add/update/remove/persist
+* Checkout creates order
+* Seeded products visible
+* Docs + tests complete
+
+================================================================================
+PROMPT 3: Dependency Installation
+================================================================================
+
+can you install all the dependencies and everything by yourself ?
+
+================================================================================
+PROMPT 4: Fix TypeScript Import Issues
+================================================================================
+
+fix these issues:
+
+[Error related to TypeScript module resolution with ts-node and ES modules]
+
+================================================================================
+PROMPT 5: Git Repository Push
+================================================================================
+
+kindly push these changes to git repository : 
+@https://github.com/rajiv-rane/ecommerce_assignment.git
+
+================================================================================
+PROMPT 6: Create Prompts File
+================================================================================
+
+add all those professional prompts in a prompts.txt file and push that file to the same repository
+
+================================================================================
+NOTES ON PROMPT USAGE
+================================================================================
+
+1. Initial Setup Prompt:
+   - Created basic JavaScript structure
+   - Set up frontend and backend folders
+   - Implemented core features
+
+2. TypeScript Migration Prompt:
+   - Converted entire codebase to TypeScript
+   - Added comprehensive type definitions
+   - Implemented all advanced features
+   - Created complete documentation
+
+3. Dependency Installation:
+   - Installed all npm packages
+   - Verified TypeScript compilers
+   - Confirmed all dependencies working
+
+4. Import Issues Fix:
+   - Replaced ts-node with tsx for better ES module support
+   - Fixed all TypeScript import paths
+   - Resolved module resolution issues
+
+5. Git Push:
+   - Committed all 48 files
+   - Pushed to GitHub repository
+   - Set up remote tracking
+
+6. Prompts File:
+   - Documented all prompts used
+   - Created comprehensive prompts.txt file
+
+================================================================================
+TECHNICAL DECISIONS MADE
+================================================================================
+
+- Used tsx instead of ts-node for better ES module support
+- Implemented full TypeScript for type safety
+- Used Faker.js for realistic seed data generation
+- Implemented react-hot-toast for user notifications
+- Created comprehensive OpenAPI specification
+- Set up GitHub Actions CI/CD pipeline
+- Used npm workspaces for monorepo structure
+
+================================================================================
+END OF PROMPTS FILE
+================================================================================
+
